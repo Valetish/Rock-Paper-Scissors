@@ -6,3 +6,10 @@ function getComputerChoice(){
 }
 console.log(getComputerChoice());
 
+
+//Step 3: Write the logic to get the human choice
+function getHumanChoice(){
+    return prompt("choose: rock scissors paper");
+}
+
+console.log(getHumanChoice());
