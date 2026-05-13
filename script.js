@@ -28,7 +28,16 @@ let humanScore = 0, computerScore = 0;
 
 
 function playRound(playerSelection, computerSelection){
+    let winner = "";
 
+    if(winner == "player")
+        humanScore++;
+    if (winner == "computer") {
+        computerScore++;
+    } else {
+        
+    }
+    console.log("CONGRATS: ")
 }
 
 const humanSelection = getHumanChoice();
