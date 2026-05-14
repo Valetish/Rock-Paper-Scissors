@@ -28,16 +28,29 @@ let humanScore = 0, computerScore = 0;
 
 
 function playRound(playerSelection, computerSelection){
-    let winner = "";
 
-    if(winner == "player")
-        humanScore++;
-    if (winner == "computer") {
-        computerScore++;
-    } else {
-        
+    humanChoice = humanChoice.toLowerCase();
+
+    if (humanChoice === computerChoice) {
+        console.log("It's a draw!");
+        return;
     }
-    console.log("CONGRATS: ")
+
+    if (
+        (humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "paper" && computerChoice === "rock") ||
+        (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+        humanScore++;
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+    }
+    else {
+        computerScore++;
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+    }
+
+    console.log("Human score:", humanScore);
+    console.log("Computer score:", computerScore);
 }
 
 const humanSelection = getHumanChoice();
