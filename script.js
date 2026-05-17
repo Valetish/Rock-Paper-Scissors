@@ -1,4 +1,6 @@
+//Step 1: Setup the project structure
 console.log("Hello, World!");
+
 
 //Step 2: Write the logic to get the computer choice
 function computerChoice(){
@@ -52,7 +54,15 @@ function playRound(playerSelection, computerSelection){
     console.log("Computer score:", computerScore);
 }
 
-const humanSelection = humanChoice();
-const computerSelection = computerChoice();
 
-playRound(humanSelection, computerSelection);
+//Step 6: Write the logic to play the entire game
+function playGame(){
+    for(i = 0; i < 5; i++){
+        let humanSelection = humanChoice();
+        let computerSelection = computerChoice();
+        
+        playRound(humanSelection, computerSelection);
+    }
+}
+
+playGame();
