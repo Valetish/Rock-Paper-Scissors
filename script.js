@@ -1,7 +1,7 @@
 console.log("Hello, World!");
 
 //Step 2: Write the logic to get the computer choice
-function getComputerChoice(){
+function computerChoice(){
     const rand = Math.floor(Math.random() * 3);
 
     switch (rand) {
@@ -18,7 +18,7 @@ function getComputerChoice(){
 
 
 //Step 3: Write the logic to get the human choice
-function getHumanChoice(){
+function humanChoice(){
     return prompt("choose: rock scissors paper");
 }
 
@@ -28,32 +28,31 @@ let humanScore = 0, computerScore = 0;
 
 
 function playRound(playerSelection, computerSelection){
+    const human = String(playerSelection).toLowerCase();
+    const computer = String(computerSelection).toLowerCase();
 
-    humanChoice = humanChoice.toLowerCase();
-
-    if (humanChoice === computerChoice) {
+    if (human === computer) {
         console.log("It's a draw!");
         return;
     }
 
     if (
-        (humanChoice === "rock" && computerChoice === "scissors") ||
-        (humanChoice === "paper" && computerChoice === "rock") ||
-        (humanChoice === "scissors" && computerChoice === "paper")
+        (human === "rock" && computer === "scissors") ||
+        (human === "paper" && computer === "rock") ||
+        (human === "scissors" && computer === "paper")
     ) {
         humanScore++;
-        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-    }
-    else {
+        console.log(`You win! ${human} beats ${computer}`);
+    } else {
         computerScore++;
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        console.log(`You lose! ${computer} beats ${human}`);
     }
 
     console.log("Human score:", humanScore);
     console.log("Computer score:", computerScore);
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+const humanSelection = humanChoice();
+const computerSelection = computerChoice();
 
 playRound(humanSelection, computerSelection);
